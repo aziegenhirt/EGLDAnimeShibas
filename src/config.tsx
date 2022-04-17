@@ -13,9 +13,9 @@ export const walletConnectDeepLink =
   "https://maiar.page.link/?apn=com.elrond.maiar.wallet&isi=1519405832&ibi=com.elrond.maiar.wallet.dev&link=https://maiar.com/";
 
 export const contractAddress =
-  "erd1qqqqqqqqqqqqqpgqcscrlpmpy0qm5n40aszjf6mnjthvla6rs5vqqfk69l";
+  "erd1qqqqqqqqqqqqqpgqxvv867cgtep0pd6vtwgkgsplfqnr8ev0s5vq5wz46p";
 export const bech32ContractAddress =
-  "00000000000000000500c4303f876123c1ba4eafec0524eb7392eecff7438518";
+  "0000000000000000050033187d7b085e42f0b74c5b9164403f482633e58f8518";
 
 export const network: Dapp.NetworkType = {
   id: "mainnet",
