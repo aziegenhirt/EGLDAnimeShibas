@@ -4,7 +4,6 @@ import { contractAddress, bech32ContractAddress, network } from "config";
 import { RawTransactionType } from "helpers/types";
 import useNewTransaction from "pages/Transaction/useNewTransaction";
 import { routeNames } from "routes";
-import Math;
 
 const Actions = () => {
   const sendTransaction = Dapp.useSendTransaction();
