@@ -59,9 +59,6 @@ const Actions = () => {
             transaction.data += `@${new Buffer("mintRandomNft").toString(
               "hex",
             )}`;
-            let qty = quantity.toString(16);
-            if (qty.length % 2 == 1) qty = `0${qty}`;
-            transaction.data += `@${qty}`;
 
             e.preventDefault();
             sendTransaction({
@@ -80,8 +77,8 @@ const Actions = () => {
           alert("EGLD balance insufficient.");
         } else {
           if (quantity > 9)
-            transaction.data = `mintRandomNft@0${quantity.toString(16)}`;
-          else transaction.data = `mintRandomNft@0${quantity}`;
+            transaction.data = `mintRandomNft`;
+          else transaction.data = `mintRandomNft`;
           e.preventDefault();
           sendTransaction({
             transaction: newTransaction(transaction),
