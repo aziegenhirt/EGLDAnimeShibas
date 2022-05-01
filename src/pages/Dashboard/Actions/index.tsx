@@ -51,7 +51,10 @@ const Actions = () => {
             const lkmex = new Buffer(token["collection"]).toString("hex");
             const nonce = token["identifier"].split("-")[2];
             transaction.data += `@${lkmex}@${nonce}`;
-            let lkmex_amount = parseInt(value, 16).toString(16);
+            let lkmex_amount1 = parseInt(value, 10);
+            let lkmex_amount = lkmex_amount1.toString(16)
+            console.log(lkmex_amount);
+            console.log(lkmex_amount1);
             if (lkmex_amount.length % 2 == 1) lkmex_amount = `0${lkmex_amount}`;
             transaction.data += `@${lkmex_amount}`;
 
