@@ -56,7 +56,7 @@ const Actions = () => {
             transaction.data += `@${lkmex_amount}`;
 
             transaction.data += `@${bech32ContractAddress}`;
-            transaction.data += `@${new Buffer("mint_with_lkmex").toString(
+            transaction.data += `@${new Buffer("mint_random_nft").toString(
               "hex",
             )}`;
             let qty = quantity.toString(16);
@@ -79,8 +79,8 @@ const Actions = () => {
           setQuantity(Math.floor(balance / EGLD_PRICE));
           alert("EGLD balance insufficient.");
         } else {
-          if (quantity > 9) transaction.data = `mint@0${quantity.toString(16)}`;
-          else transaction.data = `mint@0${quantity}`;
+          if (quantity > 9) transaction.data = `mint_random_nft@0${quantity.toString(16)}`;
+          else transaction.data = `mint_random_nft@0${quantity}`;
           e.preventDefault();
           sendTransaction({
             transaction: newTransaction(transaction),
@@ -92,7 +92,7 @@ const Actions = () => {
 
   const mintTransaction: RawTransactionType = {
     receiver: contractAddress,
-    data: "mint",
+    data: "mint_random_nft",
     value: `${EGLD_PRICE}`,
     gasLimit: 600000000,
   };
