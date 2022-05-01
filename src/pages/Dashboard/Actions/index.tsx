@@ -4,6 +4,7 @@ import { contractAddress, bech32ContractAddress, network } from "config";
 import { RawTransactionType } from "helpers/types";
 import useNewTransaction from "pages/Transaction/useNewTransaction";
 import { routeNames } from "routes";
+import Math;
 
 const Actions = () => {
   const sendTransaction = Dapp.useSendTransaction();
@@ -16,7 +17,7 @@ const Actions = () => {
 
   const DROP_SIZE = 300;
   const EGLD_PRICE = 0.2500000000000000001;
-  const LKMEX_PRICE = 500000.000000000000000001;
+  const LKMEX_PRICE = 500000;
 
   const getInfo = async () => {
     const url = `${network.apiAddress}/accounts/${contractAddress}/nfts/count`;
@@ -39,7 +40,7 @@ const Actions = () => {
   const send =
     (transaction: RawTransactionType) => async (e: React.MouseEvent) => {
       if (transaction.data?.startsWith("ESDTNFTTransfer")) {
-        const value = LKMEX_PRICE * quantity * 10 ** 18;
+        const value = Math.round(LKMEX_PRICE * quantity * 10 ** 18);
 
         // Call API
         const url = `${network.apiAddress}/accounts/${account.address}/nfts?search=LKMEX`;
