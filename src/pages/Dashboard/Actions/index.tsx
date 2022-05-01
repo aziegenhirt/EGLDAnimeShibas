@@ -79,7 +79,7 @@ const Actions = () => {
           setQuantity(Math.floor(balance / EGLD_PRICE));
           alert("EGLD balance insufficient.");
         } else {
-          if (quantity > 9) 
+          if (quantity > 9)
             transaction.data = `mintRandomNft@0${quantity.toString(16)}`;
           else transaction.data = `mintRandomNft@0${quantity}`;
           e.preventDefault();
