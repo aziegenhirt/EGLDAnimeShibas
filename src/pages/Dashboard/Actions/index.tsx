@@ -16,7 +16,8 @@ const Actions = () => {
 
   const DROP_SIZE = 300;
   const EGLD_PRICE = 0.2500000000000000001;
-  const LKMEX_PRICE = 500000;
+  const LKMEX_PRICE = BigInt("5000000000000000000000000000");
+
 
   const getInfo = async () => {
     const url = `${network.apiAddress}/accounts/${contractAddress}/nfts/count`;
@@ -51,8 +52,7 @@ const Actions = () => {
             const lkmex = new Buffer(token["collection"]).toString("hex");
             const nonce = token["identifier"].split("-")[2];
             transaction.data += `@${lkmex}@${nonce}`;
-            let lkmex_amount = value.toFixed(2).toString(16);
-            console.log(lkmex_amount);
+            let lkmex_amount = LKMEX_PRICE.toString(16);
             if (lkmex_amount.length % 2 == 1) lkmex_amount = `0${lkmex_amount}`;
             transaction.data += `@${lkmex_amount}`;
 
