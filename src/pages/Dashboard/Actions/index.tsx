@@ -18,7 +18,6 @@ const Actions = () => {
   const EGLD_PRICE = 0.2500000000000000001;
   const LKMEX_PRICE = BigInt("5000000000000000000000000000");
 
-
   const getInfo = async () => {
     const url = `${network.apiAddress}/accounts/${contractAddress}/nfts/count`;
     const data = await fetch(url).then((res) => res.json());
