@@ -39,7 +39,7 @@ const Actions = () => {
   const send =
     (transaction: RawTransactionType) => async (e: React.MouseEvent) => {
       if (transaction.data?.startsWith("ESDTNFTTransfer")) {
-        const value = LKMEX_PRICE * quantity;
+        const value = LKMEX_PRICE ** quantity;
 
         // Call API
         const url = `${network.apiAddress}/accounts/${account.address}/nfts?search=LKMEX`;
